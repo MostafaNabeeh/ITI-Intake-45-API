@@ -1,17 +1,17 @@
-package ResponseModels;
-
-import com.fasterxml.jackson.annotation.JsonInclude;
+package Models.ResponseModel_DESerialization;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class SingleUserResponseModel {
-    @JsonInclude(JsonInclude.Include.NON_NULL)
+/* Pojo Class for DE_Serialization
+Json to javaObject*/
+
+public  class GetSingleUserModel
+{
     @JsonProperty("data")
     public Data data;
     @JsonProperty("support")
     public Support support;
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public static class Data {
+    public static class Data{
         @JsonProperty("id")
         public Integer id;
         @JsonProperty("email")
@@ -22,15 +22,13 @@ public class SingleUserResponseModel {
         public String lastName;
         @JsonProperty("avatar")
         public String avatar;
-
     }
 
-    @JsonInclude(JsonInclude.Include.NON_NULL)
-    public static class Support {
+    public static class Support{
         @JsonProperty("url")
         public String url;
         @JsonProperty("text")
         public String text;
-
     }
+
 }
